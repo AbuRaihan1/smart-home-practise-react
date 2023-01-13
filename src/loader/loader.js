@@ -14,7 +14,7 @@ const cartAndProductsLoader = async () => {
       initialCart.push(foundProduct);
     }
   }
-  return {products, initialCart};
+  return { products, initialCart };
 };
 
 export default cartAndProductsLoader;

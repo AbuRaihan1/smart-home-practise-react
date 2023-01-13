@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { toast } from 'react-toastify';
 import { CartContext, ProductsContext } from '../layout/Main';
 import { addToDb } from '../utils/fakeDB';
@@ -25,7 +25,7 @@ const Shop = () => {
     toast.success('product added', {autoClose : 500})
   }
 
-  console.log(cart);
+
 
 
   return (
