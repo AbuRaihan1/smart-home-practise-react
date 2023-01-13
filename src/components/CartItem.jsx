@@ -1,7 +1,7 @@
 import React from 'react'
 
-const CartItem = () => {
-  const product = {}
+const CartItem = ({product}) => {
+  // const product = {}
   const { id, name, price, quantity, picture } = product
   return (
     <li className='flex flex-col py-6 sm:flex-row sm:justify-between'>

@@ -3,13 +3,16 @@ import Cart from "../components/Cart";
 import Home from "../components/Home";
 import Shop from "../components/Shop";
 import Main from "../layout/Main";
+import ErrorPage from "../components/ErrorPage"
+import cartAndProductsLoader from "../loader/loader";
 const { createBrowserRouter } = require("react-router-dom");
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
-    loader: () => fetch("products.json"),
+    loader: cartAndProductsLoader,
+    errorElement : <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",

@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import CartItem from './CartItem'
 
 import { Link } from 'react-router-dom'
+import { CartContext } from '../layout/Main'
 
 const Cart = () => {
-  const cart = []
+  const [cart, setCart] = useContext(CartContext);
+  console.log(cart);
 
   return (
     <div className='flex min-h-screen items-start justify-center bg-gray-100 text-gray-900'>
@@ -11,7 +14,11 @@ const Cart = () => {
         <h2 className='text-xl font-semibold'>
           {cart.length ? 'Review Cart Items' : 'Cart is EMPTY!'}
         </h2>
-        <ul className='flex flex-col divide-y divide-gray-700'></ul>
+        <ul className='flex flex-col divide-y divide-gray-700'>
+          {
+            cart.map ( product => <CartItem product={product} key={product.id}></CartItem>)
+          }
+        </ul>
         <div className='space-y-1 text-right'>
           <p>
             Total amount: <span className='font-semibold'>00$</span>
