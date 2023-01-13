@@ -1,9 +1,7 @@
 import About from "../components/About";
-import {
-  default as Cart,
-  default as Home,
-  default as Shop,
-} from "../components/Shop";
+import Cart from "../components/Cart";
+import Home from "../components/Home";
+import Shop from "../components/Shop";
 import Main from "../layout/Main";
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -13,6 +11,10 @@ const router = createBrowserRouter([
     element: <Main></Main>,
     loader: () => fetch("products.json"),
     children: [
+      {
+        path: "/",
+        element: <Shop></Shop>,
+      },
       {
         path: "/shop",
         element: <Shop></Shop>,
